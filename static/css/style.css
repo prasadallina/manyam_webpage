@@ -409,7 +409,7 @@ body {
 }
 
 .link-box {
-  background: #3a8dde;
+  background: #8aecf3;
   border: 1px solid #1d033e;
   padding: 22px 32px;
   border-radius: 12px;
@@ -422,7 +422,7 @@ body {
 .link-box:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 4px 16px rgba(58,141,222,0.18);
-  background: #1e5631;
+  background: #f7b6e6;
 }
 
 .link-box a {
