@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ district.name }} - About</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style> 
+ 
+.section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  color: #0c3c78;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 10px;
+}
+
+.section h3 {
+  color: #1e3d59;
+  margin-top: 20px;
+}
+
+.section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.section li {
+  margin-bottom: 10px;
+}
+
+.section strong {
+  color: #005288;
+}
+
+.section em {
+  color: #666;
+  font-style: italic;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #e0e6ed;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+</style>
+
+</head>
+<body>
+
+   <header class="site-header">
+    <div class="logo-section">
+      <img src="{{ district.logo_left }}" alt="AP Police Logo">
+    </div>
+    <div class="title-section">
+      <h1>{{ district.name }}</h1>
+    </div>
+    <div class="logo-section">
+      <img src="{{ district.logo_right }}" alt="District Emblem">
+    </div>
+  </header>
+
+ <!-- Navbar Section -->
+    <nav class="navbar">
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <ul id="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('organization') }}">Organization</a></li>
+            <li><a href="{{ url_for('officers') }}">Officers</a></li>
+            <li><a href="{{ url_for('policestation') }}">Police Stations</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('wings') }}">Wings</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+        </ul>
+    </nav>
+    <!-- District History Overview -->
+    <div class="section">
+      <h2>District History Overview</h2>
+      <p>{{ history.overview }}</p>
+    </div>
+
+    <!-- Ancient/Medieval Period -->
+    <div class="section">
+      <h3>{{ history.ancient_medieval.period }}</h3>
+      <ul>
+        {% for point in history.ancient_medieval.key_points %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Colonial Era -->
+    <div class="section">
+      <h3>{{ history.colonial_era.period }}</h3>
+      <ul>
+        {% for point in history.colonial_era.key_points %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Modern History -->
+    <div class="section">
+      <h3>{{ history.modern_history.period }}</h3>
+      <ul>
+        {% for point in history.modern_history.key_points %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Cultural Highlights -->
+    <div class="section">
+      <h2>Cultural Highlights</h2>
+      <ul>
+        {% for place in history.cultural_highlights %}
+          <li>
+            <strong>{{ place.site }}</strong> — {{ place.location }}  
+            <br><em>{{ place.significance }}</em>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <hr>
+
+    <!-- Police History -->
+    <div class="section">
+      <h2>Police History</h2>
+
+      <!-- Colonial Period -->
+      <h3>{{ police_history.colonial_period.title }}</h3>
+      <ul>
+        {% for detail in police_history.colonial_period.details %}
+          <li>{{ detail }}</li>
+        {% endfor %}
+      </ul>
+
+      <!-- Manyam Rebellion -->
+      <h3>{{ police_history.manyam_rebellion.title }}</h3>
+      <ul>
+        {% for detail in police_history.manyam_rebellion.details %}
+          <li>{{ detail }}</li>
+        {% endfor %}
+      </ul>
+
+      <!-- Modern Police -->
+      <h3>{{ police_history.modern_police.title }}</h3>
+      <ul>
+        {% for detail in police_history.modern_police.details %}
+          <li>{{ detail }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+  </script>
+ <!-- Footer Section -->
+  <footer class="site-footer">
+    <p>📍 District Police Headquarters, Manyam</p>
+    <p>📞 Emergency: 100 | Email: sppvpmanyam@gmail.com</p>
+    <p>&copy; 2025 Manyam Police</p>
+  </footer>
+
+</body>
+</html>

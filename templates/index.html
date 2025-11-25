@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ district.name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="{{ district.logo_left }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+
+  /* SP Profile + Announcements */
+  .sp-announcement-container {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    margin: 40px 20px;
+  }
+
+  .sp-profile, .announcements {
+    flex: 1;
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row; /* photo left, details right by default */
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(8,25,41,0.06);
+  }
+
+  .sp-profile {
+    text-align: left;
+    background: #fff;
+  }
+
+  .sp-profile img {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 28px 0 0;
+    box-shadow: 0 12px 30px rgba(2, 48, 54, 0.08);
+    object-fit: cover;
+  }
+
+  .sp-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .sp-details h2 {
+    margin: 0;
+    color: #0b2b66; /* deep blue for name */
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .sp-details h3 {
+    margin: 8px 0 4px;
+    color: #6b2008; /* warm brown for designation */
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .sp-details h4 {
+    margin: 4px 0 12px;
+    color: #116a42; /* green for district */
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .sp-details p {
+    color: #063b2b; /* dark green text for message */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+
+  /* Announcement Section */
+  .announcements {
+    position: relative;
+    overflow: visible;
+    background: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .announcements h3 {
+    margin: 12PX auto;
+    padding: 0 6px;
+    color: #e60808;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    position: absolute;
+    top: 18px;
+    left: 50%; transform: translateX(-50%);
+    z-index: 3;
+
+  }
+
+  .announcement-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    margin-top: 28px; /* space below heading */
+    padding-top: 6px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  .announcement-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* animation controlled via classes: .start-middle (one-shot) then .loop (infinite) */
+    animation: none;
+  }
+
+  .announcement-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #cbd5e1;
+    font-size: 1rem;
+    color: #1e293b;
+    background: #fff;
+  }
+
+  /* Smooth scroll up animation */
+  @keyframes scroll-up-middle {
+    /* start from middle and scroll up to hide under heading */
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-85%); }
+  }
+
+  @keyframes scroll-up-loop {
+    /* regular loop: start off-bottom then scroll up */
+    0% { transform: translateY(100%); }
+    85% { transform: translateY(-85%); }
+    100% { transform: translateY(-85%); }
+  }
+
+  .announcement-list.start-middle {
+    animation: scroll-up-middle 12s linear forwards;
+  }
+
+  .announcement-list.loop {
+    animation: scroll-up-loop 18s linear infinite;
+  }
+
+  @media (max-width: 768px) {
+    .sp-announcement-container {
+      flex-direction: column;
+      height: 20% ;
+    }
+    /* stack SP profile vertically on small screens */
+    .sp-profile, .announcements {
+      flex-direction: column;
+      padding: 20px;
+    }
+    .sp-profile img {
+      max-width: 360px;
+      margin: 0 auto 18px;
+    }
+    .sp-details {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* Banner Carousel Styles */
+  .banner-carousel {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    overflow: hidden;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fill container, ensures full width for all slides */
+    display: block;
+    background: #f0f0f0;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+    border-radius: 4px;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .carousel-btn.prev {
+    left: 20px;
+  }
+
+  .carousel-btn.next {
+    right: 20px;
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .dot.active {
+    background: rgba(255, 255, 255, 1);
+  }
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .carousel-btn {
+    padding: 8px 14px;
+    font-size: 1.3rem;
+  }
+  .carousel-dots .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+  }
+}
+
+/* Responsive: mobile/tablet behaviour
+   On small screens we switch the carousel to height:auto so the image defines the height.
+   Slides will be displayed one below another (only active is shown) and images keep their full aspect
+   ratio (no cropping) so the whole image is visible with no top/bottom gaps.
+*/
+@media (max-width: 768px) {
+  .banner-carousel {
+    height: auto; /* let image height determine banner height */
+    overflow: visible;
+  }
+
+  .carousel-container {
+    height: auto;
+  }
+
+  /* Use flow layout for slides on small screens and only show the active one */
+  .carousel-slide {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: auto;
+    top: auto;
+    opacity: 1;
+    transition: none;
+    display: none; /* hide non-active slides */
+  }
+
+  .carousel-slide.active {
+    display: block;
+  }
+
+  /* Show full image, preserve aspect ratio and avoid cropping */
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* show full image */
+    display: block;
+  }
+
+  .carousel-btn {
+    padding: 6px 12px;
+    font-size: 1rem;
+  }
+
+  .carousel-dots .dot {
+    height: 6px;
+    width: 6px;
+    margin: 0 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-carousel {
+    height: auto;
+  }
+
+  .carousel-btn {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+  }
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="logo-section">
+      <img src="{{ district.logo_left }}" alt="AP Police Logo">
+    </div>
+    <div class="title-section">
+      <h1>{{ district.name }}</h1>
+    </div>
+    <div class="logo-section">
+      <img src="{{ district.logo_right }}" alt="District Emblem">
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <!-- Hamburger only visible on small screens -->
+    <span class="menu-toggle"><i class="fas fa-bars"></i></span>
+
+    <ul id="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About Us</a></li>
+        <li><a href="{{ url_for('organization') }}">Organization</a></li>
+        <li><a href="{{ url_for('officers') }}">Officers</a></li>
+        <li><a href="{{ url_for('policestation') }}">Police Stations</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a href="{{ url_for('wings') }}">Wings</a></li>
+        <li><a href="{{ url_for('services') }}">Services</a></li>
+        <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+       <li><a href="{{ url_for('login') }}">Adminlogin</a></li>
+
+    </ul>
+</nav>
+   <!-- Banner Carousel -->
+  <section class="banner-carousel">
+    <div class="carousel-container">
+      {% for image in banner_images %}
+        <div class="carousel-slide {% if loop.index == 1 %}active{% endif %}">
+          <img src="{{ image }}" alt="Banner {{ loop.index }}">
+        </div>
+      {% endfor %}
+      <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+      <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+    </div>
+    <div class="carousel-dots">
+      {% for image in banner_images %}
+        <span class="dot {% if loop.index == 1 %}active{% endif %}" onclick="currentSlide({{ loop.index0 }})"></span>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="sp-announcement-container">
+    <div class="sp-profile">
+      <img src="{{ sp_profile.photo }}" alt="SP Photo">
+      <div class="sp-details">
+        <h2>{{ sp_profile.name }}</h2>
+        <h3>{{ sp_profile.designation }}</h3>
+          <h4>{{ sp_profile.district }}</h4>
+        <p>{{ sp_profile.message }}</p>
+      </div>
+    </div>
+
+    <div class="announcements">
+      <h3>📢 Latest Announcements</h3>
+      <div class="announcement-wrapper">
+        <ul class="announcement-list">
+          {% for announcement in announcements %}
+            <li>{{ announcement }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-links">
+    {% for link in quick_links %}
+      <div class="link-box">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </div>
+    {% endfor %}
+  </section>
+
+    <script>
+       const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelectorAll('#nav-links li a');
+
+// Toggle menu on hamburger click
+menuToggle.addEventListener('click', function() {
+    document.querySelector('.navbar').classList.toggle('active');
+});
+
+// Close menu automatically when a link is clicked (mobile only)
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 900) { // small screens only
+            document.querySelector('.navbar').classList.remove('active');
+        }
+    });
+});
+
+// Carousel functionality
+let currentSlideIndex = 0;
+
+function showSlide(n) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+  if (!slides.length) return;
+
+  // normalize index to valid range (handles negative and overflow)
+  currentSlideIndex = ((n % slides.length) + slides.length) % slides.length;
+
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  slides[currentSlideIndex].classList.add('active');
+  if (dots[currentSlideIndex]) dots[currentSlideIndex].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlideIndex++;
+    showSlide(currentSlideIndex);
+}
+
+function prevSlide() {
+    currentSlideIndex--;
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(n) {
+    currentSlideIndex = n;
+    showSlide(currentSlideIndex);
+}
+
+// Auto-advance carousel every 6 seconds
+setInterval(nextSlide, 6000);
+
+  // Announcements: start once from middle, then loop from bottom
+  (function() {
+    const annList = document.querySelector('.announcement-list');
+    if (!annList) return;
+
+    // play initial middle-start animation once
+    annList.classList.add('start-middle');
+
+    function onAnimEnd() {
+      // after first animation ends, switch to the looping animation
+      annList.classList.remove('start-middle');
+      annList.classList.add('loop');
+      annList.removeEventListener('animationend', onAnimEnd);
+    }
+
+    annList.addEventListener('animationend', onAnimEnd);
+  })();
+    </script>
+
+  <footer class="site-footer">
+    <p>📍 {{ contact.address }}</p>
+    <p>📞 Emergency: {{ contact.emergency }} | Email: {{ contact.email }}</p>
+    <p>&copy; {{ contact.year }} Manyam Police</p>
+  </footer>
+
+  <div class="floating-social-sidebar">
+    <ul>
+      <li><a class="facebook" href="{{ social_media.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a class="instagram" href="{{ social_media.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      <li><a class="twitter" href="{{ social_media.twitter }}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+      <li><a class="youtube" href="{{ social_media.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+  </div>
+
+</body>
+</html>

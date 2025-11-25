@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ district.name }} - Officers</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ <style>
+/* ------------------------------
+   Subdivision Header
+------------------------------ */
+.subdivision-header {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  border-radius: 10px;
+  font-size: 1.4em;
+  font-weight: 600;
+  margin: 10px 0 25px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------
+   Box Container
+------------------------------ */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  padding: 20px;
+}
+
+/* ------------------------------
+   Box Styles
+------------------------------ */
+.box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e6e6e6;
+}
+
+.box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ------------------------------
+   Box Items
+------------------------------ */
+.box-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #444;
+  word-break: break-word;
+}
+
+.box-item i {
+  color: #0077b6;
+  font-size: 1.1em;
+  width: 22px;
+  text-align: center;
+}
+
+.box-item strong {
+  font-weight: 600;
+  color: #0b3954;
+  min-width: 110px;
+}
+
+/* Officer Name Highlight */
+.officer-name {
+  font-weight: 700;
+  color: #0077b6;
+  font-size: 16px;
+}
+
+/* Phone Styling */
+.officer-phone {
+  color: #c2185b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   Responsive Design
+------------------------------ */
+@media (max-width: 1024px) {
+  .box-container {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .box-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .subdivision-header {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .box-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .box {
+    padding: 15px;
+  }
+
+  .box-item {
+    font-size: 14px;
+  }
+
+  .subdivision-header {
+    font-size: 1.1em;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-section">
+      <img src="{{ district.logo }}" alt="AP Police Logo">
+    </div>
+    <div class="title-section">
+      <h1>{{ district.name }}</h1>
+    </div>
+    <div class="logo-section">
+      <img src="{{ district.emblem }}" alt="District Emblem">
+    </div>
+  </header>
+
+ <!-- Navbar Section -->
+    <nav class="navbar">
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <ul id="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('organization') }}">Organization</a></li>
+            <li><a href="{{ url_for('officers') }}">Officers</a></li>
+            <li><a href="{{ url_for('policestation') }}">Police Stations</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('wings') }}">Wings</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+        </ul>
+    </nav>
+
+  <!-- Officers List -->
+  <div class="box-container">
+    <div class="subdivision-header">Officers & Contact Numbers</div>
+    {% for officer in officers %}
+    <div class="box">
+      <div class="box-item"><strong>S.No:</strong> {{ officer.sno }}</div>
+      <div class="box-item"><strong>Officer / Section:</strong> <span class="officer-name">{{ officer.section }}</span></div>
+      <div class="box-item">
+        <strong>Contact Number(s):</strong>
+        <span class="officer-phone">
+          {% for number in officer.contact %}
+            {{ number }}{% if not loop.last %}<br>{% endif %}
+          {% endfor %}
+        </span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>📍 District Police Headquarters, Manyam</p>
+    <p>📞 Emergency: 100 | Email: sppvpmanyam@gmail.com</p>
+    <p>&copy; 2025 Manyam Police</p>
+  </footer>
+</body>
+</html>

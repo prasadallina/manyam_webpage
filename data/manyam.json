@@ -1,0 +1,51 @@
+{
+  "district": {
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png",
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE"
+  },
+  "sp_profile": {
+    "designation": "Superintendent of Police",
+    "district": "Parvathipuram Manyam District",
+    "message": "My heartfelt greetings to every citizen of our district. With unwavering commitment, the police force stands as the guardian of law and order, upholding justice with integrity and selfless service at every step. Integrity, service, and dedication form the bedrock of our mission to ensure the safety and security of every individual. Your trust and cooperation are the true strength behind our efforts—together, we can build a society rooted in peace, harmony, and mutual respect. Let us march forward with courage—your police are always with you, today and every day.",
+    "name": "Sri S.V. Madhav Reddy, IPS",
+    "photo": "static/img/banner1.jpg"
+  },
+  "announcements": [
+    "Salur rural police in Parvathipuram Manyam seized over 133 kg of dry cannabis near Mathumuru village; two arrested.",
+    "One of two incidents in the Vizag region saw over 240 kg of ganja seized; other arrests made in Anakapalle.",
+    "Reports highlight a rise in illegal country-made firearms in tribal areas of Parvathipuram Manyam amid increasing violence.",
+    "A 41-year-old man impersonating an IPS officer during Deputy CM Pawan Kalyan’s tour was arrested in Parvathipuram Manyam.",
+    "Awareness drive on cyber safety conducted at Salur Government College by Manyam Police.",
+    "SP Shri S.V. Madhav Reddy inaugurated the new Women Help Desk at Parvathipuram PS.",
+    "Traffic awareness campaign launched across tribal villages in collaboration with youth volunteers."
+  ],
+  "banner_images": [
+    "static/img/Frame_1_2-Picsart-AiImageEnhancer.png",
+    "static/img/WhatsApp_Image_2025-11-13_at_17.24.35.jpeg",
+    "static/img/Frame_2-Picsart-AiImageEnhancer.png"
+  ],
+  "quick_links": [
+    {
+      "title": "Social Media",
+      "url": "socialmedia.html"
+    },
+    {
+      "title": "Useful Government Links",
+      "url": "https://ap.gov.in"
+    }
+  ],
+  "contact": {
+    "address": "District Police Headquarters, Manyam",
+    "email": "sppvpmanyam@gmail.com",
+    "emergency": "100",
+    "year": "2025"
+  },
+  "social_media": {
+    "facebook": "https://www.facebook.com/pvpmanyampolice/photos/",
+    "instagram": "https://www.instagram.com/pvp_manyam_police/",
+    "twitter": "https://x.com/ManyamPolice/status/1540241977379147776",
+    "whatsapp": "https://whatsapp.com/channel/0029VaF1vQeK0QK1QK1QK1",
+    "youtube": "https://www.youtube.com/@paravathipurammanyamdistri4964"
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ district.name }} - Organization Chart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ <style>
+   
+    
+    .chart {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .node {
+      background: #145DA0;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      margin: 10px;
+      min-width: 260px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .line {
+      width: 2px;
+      height: 20px;
+      background: #145DA0;
+      margin: 0 auto;
+    }
+
+    .branch {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .sub-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sub-list {
+      background: #fefefe;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 8px;
+      min-width: 220px;
+    }
+
+    .sub-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .sub-list ul li {
+      padding: 3px 0;
+    }
+
+    @media (max-width: 768px) {
+      .node, .sub-list {
+        min-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <header class="site-header">
+    <div class="logo-section">
+      <img src="{{ district.logo_left }}" alt="AP Police Logo">
+    </div>
+    <div class="title-section">
+      <h1>{{ district.name }}</h1>
+    </div>
+    <div class="logo-section">
+      <img src="{{ district.logo_right }}" alt="District Emblem">
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+    <nav class="navbar">
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <ul id="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('organization') }}">Organization</a></li>
+            <li><a href="{{ url_for('officers') }}">Officers</a></li>
+            <li><a href="{{ url_for('policestation') }}">Police Stations</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('wings') }}">Wings</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+        </ul>
+    </nav>
+
+
+  <!-- Organization Chart -->
+  <h2 style="text-align:center; margin:20px; color: #1d3557;">{{ organization_chart.title }}</h2>
+
+  <div class="chart">
+    <div class="node">{{ organization_chart.top_officer }}</div>
+    <div class="line"></div>
+
+    <div class="branch">
+      {% for branch in organization_chart.branches %}
+      <div class="sub-branch">
+        <div class="node">{{ branch.title }}</div>
+        <div class="sub-list">
+          <ul>
+            {% for section in branch.sections %}
+              <li>{{ section }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+  </script>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <p>📍 District Police Headquarters, Manyam</p>
+    <p>📞 Emergency: 100 | Email: sppvpmanyam@gmail.com</p>
+    <p>&copy; 2025 Manyam Police</p>
+  </footer>
+
+</body>
+</html>

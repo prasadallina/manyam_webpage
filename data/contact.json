@@ -1,0 +1,80 @@
+{
+ "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png"
+  },
+  "apps": [
+    {
+      "link": "https://play.google.com/store/apps/details?id=com.msm.lhmsappolice",
+      "name": "AP Police Seva App"
+    },
+    {
+      "link": "https://play.google.com/store/apps/details?id=com.likhatech.disha",
+      "name": "Disha SOS App for Women Safety"
+    }
+  ],
+  "contacts": [
+    {
+      "description": "Immediate police help anywhere in A.P.",
+      "number": "100",
+      "service": "📞 Police Emergency (Dial 100)"
+    },
+    {
+      "description": "Integrated emergency response (Police/Fire/Ambulance)",
+      "number": "112",
+      "service": "🚓 Police Control Room"
+    },
+    {
+      "description": "Report online frauds, UPI scams, cyber threats",
+      "number": "1930",
+      "service": "👮 Cyber Crime Helpline"
+    },
+    {
+      "description": "Report child abuse, missing children",
+      "number": "1098",
+      "service": "🧒 Child Helpline"
+    },
+    {
+      "description": "Disha App Support / Women safety helpline",
+      "number": "181 / 112",
+      "service": "👵 Women Helpline (Disha)"
+    },
+    {
+      "description": "Fire emergency response",
+      "number": "101",
+      "service": "🔥 Fire & Rescue Services"
+    },
+    {
+      "description": "Emergency medical ambulance",
+      "number": "108",
+      "service": "🚑 Ambulance Services"
+    },
+    {
+      "description": "State-level disaster management (APSDMA)",
+      "number": "1070 / 1800-425-0101",
+      "service": "🚨 Disaster Response"
+    },
+    {
+      "description": "Crime investigation assistance",
+      "number": "0866-2978400",
+      "service": "🕵️ CID Headquarters, A.P."
+    },
+    {
+      "description": "RTI-related queries with AP Police",
+      "number": "0866-2533335",
+      "service": "📄 RTI Police Cell"
+    }
+  ],
+  
+   "contact": {
+      "address": "District Police Headquarters, Amalapuram",
+      "email": "sp@konaseema.appolice.gov.in",
+      "emergency": "100"
+    },
+  "headquarters": {
+    "address": "Andhra Pradesh Police Headquarters, Mangalagiri, Guntur District, Andhra Pradesh – 522503",
+    "phone": "+91-863-2341000",
+    "title": "📍 Police Headquarters (AP)"
+  }
+}

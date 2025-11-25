@@ -1,0 +1,207 @@
+{
+  "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png"
+  },
+  "subdivisions": [
+    {
+      "name": "PARVATHIPURAM SUB-DIVISION",
+      "stations": [
+        {
+          "name": "ASP, PVP",
+          "landline": "08963-221002",
+          "mobile": "9121109405",
+          "email": "sdpo_bjp@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/ASP+Office+Parvathipuram+Manyam+District"
+        },
+        {
+          "name": "Baljipeta",
+          "landline": "08944-256233",
+          "mobile": "9121109456",
+          "email": "sho_snm@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Balijipeta+Police+Station+Parvathipuram+Manyam+District"
+        },
+        {
+          "name": "Seetanagaram",
+          "landline": "08944-250533",
+          "mobile": "9121109456",
+          "email": "sho_pvpt@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Seethanagaram+Police+Station+Parvathipuram+Manyam+District"
+        },
+        {
+          "name": "CI PVP",
+          "landline": "08963-220533 / 222041",
+          "mobile": "9121109434",
+          "email": "ci_pvp@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Circle+Inspector+Office+Parvathipuram"
+        },
+        {
+          "name": "PVP Town P.S.",
+          "landline": "08963-221033 / 222107",
+          "mobile": "9121109467",
+          "email": "sho_pvpt@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Parvathipuram+Town+Police+Station+Manyam"
+        },
+        {
+          "name": "SI PVP ®",
+          "landline": "08963-221034 / 222109",
+          "mobile": "9121109468",
+          "email": "sho_pvpr@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Parvathipuram+Rural+Police+Station+Manyam"
+        },
+        {
+          "name": "Komarada",
+          "landline": "08963-224533",
+          "mobile": "9121109470",
+          "email": "sho_kmd@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Komarada+Police+Station+Manyam+District"
+        },
+        {
+          "name": "Garugubilli P.S.",
+          "landline": "08963-226833",
+          "mobile": "9121109469",
+          "email": "sho_gbl@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Garugubilli+Police+Station+Manyam+District"
+        },
+        {
+          "name": "CI, Salur",
+          "landline": "08964-242464",
+          "mobile": "9121109433",
+          "email": "ci_slr@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Circle+Inspector+Office+Salur"
+        },
+        {
+          "name": "Salur Town",
+          "landline": "08964-242333",
+          "mobile": "9121109471",
+          "email": "sho_slrt@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Salur+Town+Police+Station+Manyam"
+        },
+        {
+          "name": "Salur Rural",
+          "landline": "08964-242383",
+          "mobile": "9121109472",
+          "email": "sho_slrr@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Salur+Rural+Police+Station+Manyam"
+        },
+        {
+          "name": "Makkuva",
+          "landline": "08964-243833",
+          "mobile": "9121109473",
+          "email": "sho_mkv@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Makkuva+Police+Station+Manyam+District"
+        },
+        {
+          "name": "Pachipenta",
+          "landline": "08964-243633",
+          "mobile": "9121109474",
+          "email": "sho_pcp@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Pachipenta+Police+Station+Manyam+District"
+        },
+        {
+          "name": "Elwinpeta",
+          "landline": "08963-223434",
+          "mobile": "9440904754",
+          "email": "ci_ept@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Elwinpeta+Circle+Inspector+Office"
+        },
+        {
+          "name": "Elwinpeta",
+          "landline": "08963-223433",
+          "mobile": "9440795948",
+          "email": "sho_ept@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Elwinpeta+Police+Station+Manyam+District"
+        },
+        {
+          "name": "Kurapam",
+          "landline": "08963-225133",
+          "mobile": "9121109477",
+          "email": "sho_kpm@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Kurupam+Police+Station+Manyam+District"
+        },
+        {
+          "name": "N K Puram",
+          "landline": "-",
+          "mobile": "9440904750 / 9440904751",
+          "email": "sho_nkp@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/N+K+Puram+Police+Station+Manyam+District"
+        },
+        {
+          "name": "Jiyyammavalasa",
+          "landline": "08963-227533",
+          "mobile": "9121109479",
+          "email": "sho_jmv@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Jiyyammavalasa+Police+Station+Manyam+District"
+        },
+        {
+          "name": "Chinamerangi",
+          "landline": "08963-225533",
+          "mobile": "9121109478",
+          "email": "sho_cmg@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Chinamerangi+Police+Station+Manyam+District"
+        }
+      ]
+    },
+    {
+      "name": "PALAKONDA SUB-DIVISION",
+      "stations": [
+        {
+          "name": "SDPO Office, Palakonda",
+          "landline": "08941-260139",
+          "mobile": "6309990806",
+          "email": "sdpo_pvp@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/SDPO+Office+Palakonda+Manyam+District"
+        },
+        {
+          "name": "CI Office Palakonda",
+          "landline": "08941-260126",
+          "mobile": "6309990820",
+          "email": "ci_pvp@vzm.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Circle+Inspector+Office+Palakonda"
+        },
+        {
+          "name": "Palakonda PS",
+          "landline": "08941-260133",
+          "mobile": "6309990871",
+          "email": "sho_plk@skl.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Palakonda+Police+Station+Manyam+District"
+        },
+        {
+          "name": "VEERAGHATTAM PS",
+          "landline": "08941-229733",
+          "mobile": "6309990873",
+          "email": "sho_vgm@skl.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Veeraghattam+Police+Station+Manyam+District"
+        },
+        {
+          "name": "SEETHAMPETA PS",
+          "landline": "08941-258333",
+          "mobile": "6309990883",
+          "email": "sho_stp@skl.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Seethampeta+Police+Station+Manyam+District"
+        },
+        {
+          "name": "BATHILLI PS",
+          "landline": "08941-258333",
+          "mobile": "6309990884",
+          "email": "sho_btl@skl.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Bathilli+Police+Station+Manyam+District"
+        },
+        {
+          "name": "Donubai",
+          "landline": "-",
+          "mobile": "6309990885",
+          "email": "sho_dbi@skl.appolice.gov.in",
+          "geo": "https://www.google.com/maps/search/Donubai+Police+Station+Manyam+District"
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "address": "District Police Headquarters, Manyam",
+    "emergency": "100",
+    "email": "sppvpmanyam@gmail.com",
+    "copyright": "2025 Manyam Police"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo": "static/img/AP-Police.png",
+    "emblem": "static/img/manyam logo.png"
+  },
+  "officers": [
+    {
+      "sno": 1,
+      "section": "Superintendent of Police",
+      "contact": ["8977945613", "8977519100"]
+    },
+    {
+      "sno": 2,
+      "section": "Addl. SP (Admn.) PVP Manyam Dist",
+      "contact": ["8977945614", "8977519101"]
+    },
+    {
+      "sno": 3,
+      "section": "S.E.B. Helpline",
+      "contact": ["8977519109"]
+    },
+    {
+      "sno": 4,
+      "section": "Sapndana",
+      "contact": ["8977519108"]
+    },
+    {
+      "sno": 5,
+      "section": "CI-1, DSB",
+      "contact": ["8977945615", "9121109435"]
+    },
+    {
+      "sno": 6,
+      "section": "SI, DCRB",
+      "contact": ["9553909249"]
+    },
+    {
+      "sno": 7,
+      "section": "RI, AR, PVP Manyam (Admin)",
+      "contact": ["9121109489"]
+    },
+    {
+      "sno": 8,
+      "section": "RI, Welfare",
+      "contact": ["8712628496"]
+    },
+    {
+      "sno": 9,
+      "section": "RI home guards",
+      "contact": ["8712628495"]
+    },
+    {
+      "sno": 10,
+      "section": "DSP, DTC",
+      "contact": ["8179270379"]
+    },
+    {
+      "sno": 11,
+      "section": "CI Kotia",
+      "contact": ["9121109436"]
+    },
+    {
+      "sno": 12,
+      "section": "AAO",
+      "contact": ["8712628504"]
+    },
+    {
+      "sno": 13,
+      "section": "A & B Section Supdt",
+      "contact": ["8712628505"]
+    },
+    {
+      "sno": 14,
+      "section": "P & Store Section Supdt",
+      "contact": ["8712628506"]
+    },
+    {
+      "sno": 15,
+      "section": "CC to SP",
+      "contact": ["8712628507"]
+    },
+    {
+      "sno": 16,
+      "section": "CC to Addl SP",
+      "contact": ["8712628508"]
+    }
+  ]
+}

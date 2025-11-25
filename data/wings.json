@@ -1,0 +1,54 @@
+{
+  "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png"
+  },
+  "contact": {
+      "address": "District Police Headquarters, Amalapuram",
+      "email": "sp@konaseema.appolice.gov.in",
+      "emergency": "100"
+    },
+  "wings": [
+    {
+      "description": "The Crime Wing handles investigation of criminal cases, ensures justice to victims, and works on reducing repeat offences. Specialized units deal with theft, assault, homicide, and organized crime.",
+      "title": "Crime Wing"
+    },
+    {
+      "description": "This wing manages road safety, regulates vehicle movement, and controls congestion in towns. They conduct awareness drives and enforce traffic laws to prevent road accidents.",
+      "title": "Traffic Wing"
+    },
+    {
+      "description": "Responsible for maintaining public peace and order, this wing supervises daily patrolling, deployment during events, and ensures swift response during emergencies and protests.",
+      "title": "Law & Order Wing"
+    },
+    {
+      "description": "The Cybercrime unit investigates digital frauds, online harassment, financial scams, and identity theft. It works closely with cyber forensic experts and educates citizens on safe internet practices.",
+      "title": "Cyber Crime Wing"
+    },
+    {
+      "description": "This wing handles cases related to women safety, domestic violence, sexual harassment, and child abuse. Dedicated women officers ensure timely counselling, legal support, and protection services.",
+      "title": "Women Protection Cell"
+    },
+    {
+      "description": "Special Branch handles intelligence gathering, VIP security arrangements, background verifications, and monitoring of sensitive issues to prevent any threats to district security.",
+      "title": "Special Branch"
+    },
+    {
+      "description": "The Anti-Narcotics Wing curbs the menace of drug abuse, illegal cultivation, storage, and smuggling of narcotics and psychotropic substances.",
+      "title": "Anti-Narcotics Wing"
+    },
+    {
+      "description": "Provides armed support during emergencies, law & order situations, VIP bandobust, and other high-risk duties.",
+      "title": "Armed Reserve Wing"
+    },
+    {
+      "description": "This wing conducts regular training programs for police personnel, enhancing skills in investigation, technology usage, law, and public relations.",
+      "title": "Training Wing"
+    },
+    {
+      "description": "The Bomb Detection & Disposal (BD) Wing is responsible for handling explosives, detecting suspicious materials, and ensuring public safety during bomb threats or special events.",
+      "title": "BD Wing"
+    }
+  ]
+}

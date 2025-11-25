@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ data.district.name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ----------------------
+   Global Styles
+------------------------*/
+h2 {
+  text-align: center;
+  color: #1e3d59;
+  font-size: 2.2em;
+  padding: 20px 0 10px 0;
+  font-weight: 700;
+}
+
+/* ----------------------
+   Search Bar
+------------------------*/
+.search-wrapper {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+.search-input:focus {
+  border-color: #1e40af;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+}
+
+/* ----------------------
+   Box Container
+------------------------*/
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* ----------------------
+   Box Styles
+------------------------*/
+.box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 15px 18px;
+  border: 1px solid #e0e6ed;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  background-color: #f9fafc;
+}
+
+/* Highlighted search result */
+.box.highlight {
+  border: 2px solid #00b894;
+  background-color: #e8fff7;
+  box-shadow: 0 0 0 4px rgba(0,184,148,0.2);
+  transform: translateY(-4px) scale(1.02);
+  transition: all 0.4s ease;
+}
+
+/* ----------------------
+   Box Items
+------------------------*/
+.box-item {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  color: #333;
+  gap: 8px;
+  align-items: center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.box-item strong {
+  font-weight: 600;
+  color: #1e3d59;
+  min-width: 120px;
+}
+.box-item i {
+  color: #1e40af;
+  font-size: 16px;
+  width: 22px;
+  text-align: center;
+}
+
+/* ----------------------
+   Geo Link
+------------------------*/
+.geo-link {
+  color: #35091bff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 15px;
+  background-color: #79f1efff;
+  border-radius: 25px;
+  font-size: 0.95em;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.geo-link:hover {
+  text-decoration: underline;
+  color: #410c03ff;
+  background-color: #f67b89ff;
+}
+
+/* ----------------------
+   Subdivision Headers
+------------------------*/
+.subdivision-header {
+  grid-column: 1 / -1;
+  background-color: #0c3c78;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  font-size: 1.1em;
+}
+
+/* ----------------------
+   Responsive
+------------------------*/
+@media (max-width: 768px) {
+  .box-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  .box-item {
+    flex-direction: row;
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .box-item {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+  .box-item strong {
+    margin-bottom: 4px;
+    min-width: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-section">
+    <img src="{{ data.district.logo_left }}" alt="AP Police Logo">
+  </div>
+  <div class="title-section">
+    <h1>{{ data.district.name }}</h1>
+  </div>
+  <div class="logo-section">
+    <img src="{{ data.district.logo_right }}" alt="District Emblem">
+  </div>
+</header>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+  <ul id="nav-links">
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('about') }}">About Us</a></li>
+    <li><a href="{{ url_for('organization') }}">Organization</a></li>
+    <li><a href="{{ url_for('officers') }}">Officers</a></li>
+    <li><a href="{{ url_for('policestation') }}">Police Stations</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    <li><a href="{{ url_for('wings') }}">Wings</a></li>
+    <li><a href="{{ url_for('services') }}">Services</a></li>
+  </ul>
+</nav>
+
+<h2>Police Stations</h2>
+
+<!-- Search Bar -->
+<div class="search-wrapper">
+  <input type="text" id="stationSearch" class="search-input" placeholder="Search Police Station..." autocomplete="off">
+</div>
+
+<!-- Stations Grid -->
+<div class="box-container" id="stationsGrid">
+  {% for subdivision in data.subdivisions %}
+    <div class="subdivision-header">{{ subdivision.name }}</div>
+    {% for station in subdivision.stations %}
+      <div class="box" data-name="{{ station.name | lower }}">
+        <div class="box-item"><strong>Police Station:</strong> {{ station.name }}</div>
+        <div class="box-item"><strong>Landline:</strong> {{ station.landline }}</div>
+        <div class="box-item"><strong>Mobile:</strong> {{ station.mobile }}</div>
+        <div class="box-item"><strong>Email:</strong> {{ station.email }}</div>
+        <div class="box-item">
+          <strong>Geo Location:</strong>
+          <a href="https://www.google.com/maps?q={{ station.geo }}" class="geo-link" target="_blank">📍 View on Map</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>
+
+<!-- Scripts -->
+<script>
+(function() {
+  const input = document.getElementById('stationSearch');
+  const boxes = document.querySelectorAll('.box');
+  let timeout = null;
+
+  input.addEventListener('input', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      const query = input.value.trim().toLowerCase();
+      let firstMatch = null;
+
+      boxes.forEach(box => {
+        const name = box.dataset.name || '';
+        const match = name.includes(query);
+        box.classList.toggle('highlight', match && query);
+        box.style.display = (!match && query) ? 'none' : '';
+
+        if (match && !firstMatch) firstMatch = box;
+      });
+
+      if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      if (!query) {
+        boxes.forEach(b => {
+          b.classList.remove('highlight');
+          b.style.display = '';
+        });
+      }
+    }, 200);
+  });
+
+  // Escape key clears search
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      input.value = '';
+      boxes.forEach(b => {
+        b.classList.remove('highlight');
+        b.style.display = '';
+      });
+    }
+  });
+})();
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+</script>
+
+<footer class="site-footer">
+  <p>📍 {{ data.footer.address }}</p>
+  <p>📞 Emergency: {{ data.footer.emergency }} | Email: {{ data.footer.email }}</p>
+  <p>&copy; {{ data.footer.copyright }}</p>
+</footer>
+
+</body>
+</html>

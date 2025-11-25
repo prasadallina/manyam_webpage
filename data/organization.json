@@ -1,0 +1,63 @@
+{
+  "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png"
+  },
+  "organization_chart": {
+    "title": "Parvathipuram Manyam District Police - Organization Chart",
+    "top_officer": "Superintendent of Police (SP)",
+    "branches": [
+      {
+        "title": "Addl. SP (Admin)",
+        "sections": [
+          "SB Section",
+          "DCRB",
+          "CIs Office",
+          "Establishment",
+          "Accounts Section",
+          "AR & MT Section",
+          "Special Branch"
+        ]
+      },
+      {
+        "title": "ASP (Parvathipuram Sub Division)",
+        "sections": [
+          "Parvathipuram Town PS",
+          "Parvathipuram Rural PS",
+          "Salur Town PS",
+          "Salur Rural PS",
+          "Komarada PS",
+          "Garugubilli PS",
+          "Seethanagaram PS"
+        ]
+      },
+      {
+        "title": "SDPO (Palakonda Sub Division)",
+        "sections": [
+          "Palakonda PS",
+          "Veeraghattam PS",
+          "Bhamini PS",
+          "Jiyyammavalasa PS",
+          "Seethampeta PS",
+          "Kurupam PS"
+        ]
+      },
+      {
+        "title": "District Special Units",
+        "sections": [
+          "Women Police Station (WPS)",
+          "SHE Teams",
+          "Mahila Mitra",
+          "Cyber Crime Cell",
+          "Traffic Police (if available)"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "address": "District Police Headquarters, Manyam",
+    "contact": "Emergency: 100 | Email: sppvpmanyam@gmail.com",
+    "copyright": "© 2025 Manyam Police"
+  }
+}

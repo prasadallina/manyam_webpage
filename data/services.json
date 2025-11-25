@@ -1,0 +1,74 @@
+{
+   "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png"
+  },
+ "contact": {
+      "address": "District Police Headquarters, Amalapuram",
+      "email": "sp@konaseema.appolice.gov.in",
+      "emergency": "100"
+    },
+  "services": [
+    {
+      "icon": "📑",
+      "name": "MeeSeva",
+      "url": "https://ap.meeseva.gov.in/"
+    },
+    {
+      "icon": "🛂",
+      "name": "Passport",
+      "url": "https://portal2.passportindia.gov.in/"
+    },
+    {
+      "icon": "⚖️",
+      "name": "Case Status",
+      "url": "https://citizen.appolice.gov.in/Citizen/MissingCaseStatus.aspx"
+    },
+    {
+      "icon": "📜",
+      "name": "RTI",
+      "url": "https://rti.gov.in/"
+    },
+    {
+      "icon": "🚔",
+      "name": "e-Challan",
+      "url": "https://echallan.parivahan.gov.in/index/accused-challan"
+    },
+    {
+      "icon": "🚘",
+      "name": "Transport",
+      "url": "https://www.aptransport.org/"
+    },
+    {
+      "icon": "💳",
+      "name": "NIDHI",
+      "url": "https://nidhi.apcfss.in/"
+    },
+    {
+      "icon": "🏥",
+      "name": "Arogya Badratha",
+      "url": "https://appbabonline.co.in/"
+    },
+    {
+      "icon": "📞",
+      "name": "Dial 112",
+      "url": "https://112.gov.in/"
+    },
+    {
+      "icon": "📱",
+      "name": "Lost Mobile",
+      "url": "https://ceir.gov.in/"
+    },
+    {
+      "icon": "✉️",
+      "name": "Grievance",
+      "url": "https://pgportal.gov.in/"
+    },
+    {
+      "icon": "🆔",
+      "name": "Aadhaar",
+      "url": "https://uidai.gov.in/"
+    }
+  ]
+}

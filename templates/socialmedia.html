@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ data.district.name }} - Social Media</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    
+    /* --- SOCIAL MEDIA POPUP --- */
+    .popup-container {
+      margin: 60px auto;
+      max-width: 500px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      padding: 30px;
+      text-align: center;
+      animation: slideDown 0.8s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .popup-container h2 {
+      font-size: 22px;
+      margin-bottom: 18px;
+      color: #145a32;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .facebook { background-color: #3b5998; }
+    .twitter  { background-color: #1da1f2; }
+    .instagram {
+      background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+    .youtube { background-color: #ff0000; }
+
+    /* --- BACK TO HOME BUTTON --- */
+    .back-home {
+      text-align: center;
+      margin: 30px auto;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #1e5631;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .back-home a:hover {
+      background-color: #145a32;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+ 
+   <header class="site-header">
+    <div class="logo-section">
+      <img src="{{ data.district.logo_left }}" alt="AP Police Logo">
+    </div>
+    <div class="title-section">
+      <h1>{{ data.district.name }}</h1>
+    </div>
+    <div class="logo-section">
+      <img src="{{ data.district.logo_right }}" alt="District Emblem">
+    </div>
+  </header>
+
+ 
+  <!-- SOCIAL MEDIA POPUP -->
+<div class="popup-container">
+  <h2>Follow {{ data.district.name }} on Social Media</h2>
+  <div class="social-icons">
+    {% for social in data.social_media %}
+      <a href="{{ social.url }}" target="_blank" class="{{ social.class }}" title="{{ social.name }}">
+        <i class="{{ social.font_awesome }}"></i>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+
+  <!-- BACK HOME BUTTON -->
+  <div class="back-home">
+    <a href="{{ url_for('index') }}">← Back to Home</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>{{ data.footer.address }}</p>
+    <p>{{ data.footer.contact }}</p>
+    <p>{{ data.footer.copyright }}</p>
+  </footer>
+
+</body>
+</html>

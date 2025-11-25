@@ -1,0 +1,36 @@
+{
+  "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo": "static/img/AP-Police.png",
+    "emblem": "static/img/manyam logo.png"
+  },
+  "contact": {
+    "address": "District Police Headquarters, East Godavari",
+    "emergency": "100",
+    "email": "sp@rjyu.appolice.gov.in"
+  },
+  "gallery": [
+    {"src": "gallery/WhatsApp Image 2025-02-21 at 1.49.02 PM.jpeg", "alt": "Gallery 2"},
+    {"src": "gallery/WhatsApp Image 2025-02-21 at 3.24.23 PM (2).jpeg", "alt": "Gallery 3"},
+    {"src": "gallery/WhatsApp Image 2025-02-21 at 4.34.28 PM (1).jpeg", "alt": "Gallery 4"},
+    {"src": "gallery/WhatsApp Image 2025-02-21 at 4.34.31 PM (1).jpeg", "alt": "Gallery 5"},
+    {"src": "gallery/WhatsApp Image 2025-02-21 at 4.34.37 PM (1).jpeg", "alt": "Gallery 6"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.04 PM.jpeg", "alt": "Gallery 7"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.07 PM (1).jpeg", "alt": "Gallery 8"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.07 PM (2).jpeg", "alt": "Gallery 9"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.07 PM.jpeg", "alt": "Gallery 10"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.10 PM.jpeg", "alt": "Gallery 11"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.11 PM.jpeg", "alt": "Gallery 12"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.12 PM.jpeg", "alt": "Gallery 13"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.16 PM.jpeg", "alt": "Gallery 14"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.31.18 PM.jpeg", "alt": "Gallery 15"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.42.40 PM.jpeg", "alt": "Gallery 16"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.42.41 PM.jpeg", "alt": "Gallery 17"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.44.12 PM.jpeg", "alt": "Gallery 18"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.46.01 PM (1).jpeg", "alt": "Gallery 19"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.46.01 PM (2).jpeg", "alt": "Gallery 20"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.46.01 PM.jpeg", "alt": "Gallery 21"},
+    {"src": "gallery/WhatsApp Image 2025-08-21 at 5.48.01 PM.jpeg", "alt": "Gallery 22"},
+    {"src": "gallery/WhatsApp Image 2025-08-04 at 10.56.50 AM.jpeg", "alt": "Gallery 23"}
+  ]
+}

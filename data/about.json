@@ -1,0 +1,93 @@
+{
+   "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png"
+  },
+    "history": {
+      "overview": "The history of the region that now constitutes Parvathipuram Manyam district can be divided into three main periods: the ancient/medieval era, the colonial era, and the modern administrative formation.",
+      "ancient_medieval": {
+        "period": "Pre-18th Century",
+        "key_points": [
+          "Part of Ancient Kalinga: The region was once part of the mighty Kalinga Empire along the eastern coast.",
+          "Eastern Ganga Dynasty Influence: Temples like Kamalingeswara Swamy Temple in Gallavilli were built during the 11th century CE under King Rajaraja Deva.",
+          "Northern Circars: The area belonged to the Northern Circars, controlled by multiple dynasties before coming under the Nizams and the British.",
+          "Princely States: The plains region was under the Vizianagaram princely state and local feudal lords."
+        ]
+      },
+      "colonial_era": {
+        "period": "18th–20th Century",
+        "key_points": [
+          "Agency Tract (Manyam): The British classified the forested hills as Agency Tracts governed by oppressive forest laws like the Madras Forest Act of 1882.",
+          "Administrative Hub: Parvathipuram became a sub-divisional administrative center and panchayat board by 1901.",
+          "The Manyam Rebellion (1922–1924): Led by Alluri Sitarama Raju, this uprising saw coordinated attacks on British police stations and symbolized tribal resistance against colonial rule."
+        ]
+      },
+      "modern_history": {
+        "period": "Post-Independence to Present",
+        "key_points": [
+          "Post-1947: The Parvathipuram region was initially part of Srikakulam district.",
+          "Vizianagaram Formation (1979): Parvathipuram and Salur became part of the newly formed Vizianagaram district.",
+          "Integrated Tribal Development Agency (ITDA): Established at Parvathipuram to promote tribal welfare.",
+          "District Formation (2022): Created on April 4, 2022, combining parts of Vizianagaram and Srikakulam districts.",
+          "District Naming: Initially proposed as 'Manyam district,' later renamed to 'Parvathipuram Manyam district' to honor both heritage and tribal identity."
+        ]
+      },
+      "cultural_highlights": [
+        {
+          "site": "Kasi Visweswara Temple",
+          "location": "Addapuseela village, Parvathipuram Mandal",
+          "significance": "Historical temple dating back to the 15th century."
+        },
+        {
+          "site": "Thotapalli Barrage",
+          "location": "Garugubilli Mandal",
+          "significance": "Originally built in 1908, modern barrage completed in 2015 on the Nagavali River."
+        },
+        {
+          "site": "Chinna Tirupathi",
+          "location": "Thotapalli",
+          "significance": "Sri Venkateswara Swamy Temple, a major devotional center."
+        },
+        {
+          "site": "Janjavathi Rubber Dam",
+          "location": "Near Parvathipuram",
+          "significance": "Asia’s first rubber dam."
+        },
+        {
+          "site": "Pachipenta Mandal",
+          "location": "Cheepuruvalasa village",
+          "significance": "Known for Goddess Paramma Thalli Temple."
+        }
+      ]
+    },
+    "police_history": {
+      "colonial_period": {
+        "title": "The Colonial Police as an Instrument of Oppression",
+        "details": [
+          "Under the British rule, the Manyam region was part of the Agency Tracts of the Madras Presidency.",
+          "Police enforced restrictive forest laws and suppressed tribal rights.",
+          "Corruption and tyranny were rampant, with colonial police exploiting Adivasis."
+        ]
+      },
+      "manyam_rebellion": {
+        "title": "The Manyam Rebellion (1922–1924)",
+        "details": [
+          "Led by Alluri Sitarama Raju, targeting British police stations for weapons.",
+          "Famous raids occurred across Agency areas including Chintapalle, Krishnadevi Peta, and Rajavommangi.",
+          "British response included Reserve Police, Malabar Special Police, and Assam Rifles deployment.",
+          "Martial law imposed; harsh reprisals against tribals followed.",
+          "The rebellion ended with Raju’s capture and execution in May 1924."
+        ]
+      },
+      "modern_police": {
+        "title": "Modern Police Administration (Post-2022)",
+        "details": [
+          "District Police Headquarters established at Parvathipuram after formation in 2022.",
+          "Includes Police Sub-Divisions headed by SDPOs, Law & Order Stations, CCS, Women’s PS, and Traffic PS.",
+          "Focus areas: law and order, community policing, and tribal area coordination."
+        ]
+      }
+    }
+  }
+

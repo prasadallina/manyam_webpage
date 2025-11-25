@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | {{ district.name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/AP-Police.png') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Gallery header */
+.gallery-page-header {
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 0 10px 0;
+  color: #003366;
+  font-weight: 700;
+}
+
+/* Slideshow container */
+.gallery-slideshow {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 600px;
+  margin: 20px auto 50px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Controls below slideshow */
+.gallery-controls {
+  width: 90%;
+  max-width: 900px;
+  margin: 12px auto 40px auto;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.gallery-controls button {
+  background: #003366;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.gallery-controls button:hover {
+  background: #0a4a8a;
+}
+
+/* Slides */
+.slide-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: transform 0.8s cubic-bezier(.23,1.02,.64,1), filter 0.5s;
+}
+
+.slide-image.active {
+  opacity: 1;
+}
+
+.slide-image.active img {
+  transform: scale(1.08);
+  filter: brightness(1.12) contrast(1.12) saturate(1.15);
+}
+
+/* Footer */
+footer.site-footer {
+  text-align: center;
+  padding: 25px 15px;
+  background-color: #003366;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+ 
+  .gallery-slideshow {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  
+  .gallery-slideshow {
+    height: 300px;
+  }
+  .gallery-page-header {
+    font-size: 1.5rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-section">
+      <img src="{{ district.logo }}" alt="AP Police Logo">
+    </div>
+    <div class="title-section">
+      <h1>{{ district.name }}</h1>
+    </div>
+    <div class="logo-section">
+      <img src="{{ district.emblem }}" alt="District Emblem">
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+    <nav class="navbar">
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <ul id="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('organization') }}">Organization</a></li>
+            <li><a href="{{ url_for('officers') }}">Officers</a></li>
+            <li><a href="{{ url_for('policestation') }}">Police Stations</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('wings') }}">Wings</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+        </ul>
+    </nav>
+  <div class="gallery-page-header">Photo Gallery</div>
+  <div class="gallery-slideshow">
+    {% for item in gallery %}
+    <div class="slide-image">
+      <img src="{{ item.src }}" alt="{{ item.alt }}">
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="gallery-controls">
+    <button id="prev-btn"><i class="fas fa-chevron-left"></i> Previous</button>
+    <button id="next-btn">Next <i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <p>📍 District Police Headquarters, Manyam</p>
+    <p>📞 Emergency: 100 | Email: sppvpmanyam@gmail.com</p>
+    <p>&copy; 2025 Manyam Police</p>
+  </footer>
+
+  <script>
+     document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+    let slides = document.querySelectorAll('.slide-image');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if(i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    showSlide(current);
+    let autoPlay = setInterval(nextSlide, 3000);
+
+    // hook up controls
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    if (prevBtn) prevBtn.addEventListener('click', function() { prevSlide(); clearInterval(autoPlay); autoPlay = setInterval(nextSlide, 3000); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { nextSlide(); clearInterval(autoPlay); autoPlay = setInterval(nextSlide, 3000); });
+  </script>
+</body>
+</html>

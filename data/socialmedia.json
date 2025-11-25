@@ -1,0 +1,38 @@
+{
+   "district": {
+    "name": "PARVATHIPURAM MANYAM DISTRICT POLICE",
+    "logo_left": "static/img/AP-Police.png",
+    "logo_right": "static/img/manyam logo.png"
+  },
+  "social_media": [
+    {
+      "name": "Facebook: Konaseema Police",
+      "url": "https://www.facebook.com/SPKONASEEMADISTRICT/",
+      "font_awesome": "fab fa-facebook-f",
+      "class": "facebook"
+    },
+    {
+      "name": "Instagram: @konaseema_police",
+      "url": "https://www.instagram.com/konaseema_police/?locale=en_us",
+      "font_awesome": "fab fa-instagram",
+      "class": "instagram"
+    },
+    {
+      "name": "Twitter: @KonaseemaPolice",
+      "url": "https://x.com/KonaseemaPolice",
+      "font_awesome": "fab fa-twitter",
+      "class": "twitter"
+    },
+    {
+      "name": "YouTube: Konaseema Police",
+      "url": "https://www.youtube.com/@Dr.B.R.AmbedkarkonaseemaDistri",
+      "font_awesome": "fab fa-youtube",
+      "class": "youtube"
+    }
+  ],
+  "footer": {
+    "address": "📍 District Police Headquarters, Konaseema",
+    "contact": "📞 Emergency: 100 | Email: spkonaseema@gmail.com",
+    "copyright": "© 2025 Dr. B.R. Ambedkar Konaseema Police"
+  }
+}
